@@ -1,33 +1,11 @@
-# Um algoritmo Local para Alinhamento
+# Aleatoriedade
 
 Como vimos em aula, aleatoriedade é uma estratégia bastante comum para construção de algoritmos de busca local, podendo ser usada
-de forma isolada ou de forma complementar a outra estratégia de varredura de um espaço de soluções. Em problemas de alinhamento,
-varreduras suportadas por aleatoriedade tem produzido algoritmos bastante efetivos.
-
-Dentro deste contexto, vamos considerar o algoritmo proposto abaixo:
-
-
-ALGORITMO BUSCA LOCAL COM ALEATORIEDADE
-
-Entrada: Duas sequencias de DNA a[i] e b[j], de tamanhos n e m respectivamente,pesos wmat, wmis e wgap para match, mismatch e gap respectivamente
-
-Saída: Score de um alinhamento das sequencias
-       Subsequencias alinhadas
-
-    1. Gerar uma subsequencia sb=b[j,j+1,...,j+k] de b, de tamanho aleatório k, 1<=k<=m, e 0<=j<=m 
-    2. Gerar um número aleatório inteiro positivo p
-    3. Gerar p subsequencias sa=a[i,i+1,...,i+k] de a, com tamanho k calculado no passo (1), 0<=i<=n
-    4. Calcular os scores de cada par (sa,sb) com os pesos wmat, wmis e wgap
-    5. Devolver o score máximo m entre os scores do passo (4) e as subsequencias associadas a ele
+de forma isolada ou de forma complementar a outra estratégia de varredura de um espaço de soluções. 
 
 
 
 
-A partir desta descrição, nosso primeiro projeto terá duas tarefas:
+Essa implementação consiste na adaptação da heurística gulosa de nosso projeto. A proposta é que você modifique a sua heurística gulosa de modo que ao longo da seleção de um filme você tenha 25% de chance de pegar outro filme qualquer que respeite o horário. Isso fará com que sua heurística tenha um pouco mais de exploration e possamos ter alguns resultados melhores. 
 
-<ul>
-  <li> Implementar um programa C++ para ler um arquivo contendo os tamanhos de duas sequencias de DNA, seguidos das duas sequencias, uma por linha. Calcular o score máximo utilizando o algoritmo acima, assim como as subsequencias associadas a ele. 
-  <li> Testar o algoritmo diversas vezes e comparar seus resultados com a heurística do primeiro projeto observando, principalmente, o seu comportamento em relação aos valores aleatórios k e p. Estes resultados e sua comparação deverão estar presentes no relatório a ser entregue posteriormente.
-</ul>
-
-No diretório do projeto, há um gerador de entradas disponibilizado como um notebook Python.
+*Importante*: é essencial que você guarde todos os inputs usados ao longo do projeto, para que possa comparar o desempenho de seus algoritmos conforme mudamos a heurística. Ou seja, todas as heurísticas devem ser submetidas aos mesmos arquivos de input. O seu resultado deve ser comparado sob duas perspectivas, no mínimo: (i) tempo de execução em função do aumento de filmes e de categorias e (ii) tempo de tela (isto é, será que estamos conseguindo ocupar bem as 24h do dia assitindo filmes?).
